@@ -34,7 +34,7 @@ export function UserDropdown({ userImage }: iAppProps) {
 
       <DropdownMenuContent align="end" className="w-[200px]">
         <DropdownMenuItem>
-          <Link className="w-full" href={`profile/`}>
+          <Link className="w-full" href={`/profile/`}>
             Mi perfil
           </Link>
         </DropdownMenuItem>

@@ -8,10 +8,10 @@ import { Separator } from "@/components/ui/separator";
 export default function PublicProfile({
   params,
 }: {
-  params: { user: string };
+  params: { username: string };
 }) {
   const userData = {
-    username: params.user || "Anónimo",
+    username: params.username || "Anónimo",
     cyberStatus: "Ciberexplorador",
     quantumCredits: 1250,
     holoAchievements: [

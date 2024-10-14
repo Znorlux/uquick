@@ -12,6 +12,7 @@ import { Suspense } from "react";
 import { SuspenseCard } from "./components/SuspenseCard";
 import Pagination from "./components/Pagination";
 import { unstable_noStore as noStore } from "next/cache";
+import { TrendingCommunities } from "./components/TrendingCommunities"; // Importamos el nuevo componente
 
 async function getData(searchParam: string) {
   noStore();
@@ -85,7 +86,10 @@ export default function Home({
             </p>
             <Separator className="my-5" />
 
-            <div className="flex flex-col gap-y-3">
+            {/* Insertamos el componente de Comunidades en Tendencia aquí */}
+            <TrendingCommunities />
+
+            <div className="flex flex-col gap-y-3 mt-5">
               <Button asChild variant="secondary">
                 <Link href="/r/janmarshal/create">Create Post</Link>
               </Button>

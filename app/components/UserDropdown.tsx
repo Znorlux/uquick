@@ -12,9 +12,10 @@ import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 interface iAppProps {
   userImage: string | null;
+  userName: string | null | undefined;
 }
 
-export function UserDropdown({ userImage }: iAppProps) {
+export function UserDropdown({ userImage, userName }: iAppProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -33,6 +34,11 @@ export function UserDropdown({ userImage }: iAppProps) {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-[200px]">
+        <DropdownMenuItem>
+          <Link className="w-full" href={`profile/${userName}`}>
+            Mi perfil
+          </Link>
+        </DropdownMenuItem>
         <DropdownMenuItem>
           <Link className="w-full" href="/r/create">
             Create Community

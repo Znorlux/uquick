@@ -24,7 +24,7 @@ export function UserDropdown({ userImage }: iAppProps) {
           <img
             src={
               userImage ??
-              "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
+              "https://static.vecteezy.com/system/resources/previews/001/840/618/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg"
             }
             alt="avatar of user"
             className="rounded-full h-8 w-8 hidden lg:block"

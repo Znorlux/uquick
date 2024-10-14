@@ -3,7 +3,7 @@ import Image from "next/image";
 import CreditIcon from "../../public/qc-coin.png"; // Icono para los créditos
 import StatusIcon from "../../public/status-icon.png"; // Icono para el estatus
 import AchievementIcon from "../../public/holo-red.png"; // Icono para los logros
-import { Separator } from "@/components/ui/separator";
+import { BellIcon, Contact, BookMarked, Book } from "lucide-react";
 
 export default function Profile() {
   const userData = {
@@ -27,6 +27,17 @@ export default function Profile() {
       influenceRating: 95,
     },
     innovationPoints: 500,
+    recentActivity: [
+      "Publicó un nuevo proyecto",
+      "Comentó en la propuesta de otro usuario",
+      "Recibió un nuevo logro",
+    ],
+    notifications: [
+      "Mencionaron tu nombre en un comentario",
+      "Tienes 2 nuevas solicitudes de amistad",
+    ],
+    friends: ["Usuario1", "Usuario2", "Usuario3"],
+    interests: ["Tecnología", "Innovación", "Ciberseguridad"],
   };
 
   return (
@@ -145,6 +156,60 @@ export default function Profile() {
             ¡Usa tus puntos para desbloquear innovaciones y mejoras en la
             plataforma!
           </p>
+        </Card>
+
+        {/* Actividad Reciente */}
+        <Card className="p-4 col-span-2">
+          <h2 className="text-lg font-bold mb-2">Actividad Reciente</h2>
+          <ul className="list-disc pl-5">
+            {userData.recentActivity.map((activity, index) => (
+              <li key={index} className="text-gray-700">
+                {activity}
+              </li>
+            ))}
+          </ul>
+        </Card>
+
+        {/* Notificaciones */}
+        <Card className="p-4 col-span-2 bg-blue-100">
+          <h2 className="text-lg font-bold mb-2 flex items-center gap-2">
+            <BellIcon size={25} /> Notificaciones
+          </h2>
+          <ul className="list-disc pl-5">
+            {userData.notifications.map((notification, index) => (
+              <li key={index} className="text-gray-700">
+                {notification}
+              </li>
+            ))}
+          </ul>
+        </Card>
+
+        {/* Amigos */}
+        <Card className="p-4 col-span-2">
+          <h2 className="text-lg font-bold mb-2 flex items-center gap-2">
+            <Contact size={25} /> Amigos
+          </h2>
+          <ul className="list-disc pl-5">
+            {userData.friends.map((friend, index) => (
+              <li key={index} className="text-gray-700">
+                {friend}
+              </li>
+            ))}
+          </ul>
+        </Card>
+
+        {/* Intereses */}
+        <Card className="p-4 col-span-2">
+          <h2 className="text-lg font-bold mb-2 flex items-center gap-2">
+            <BookMarked size={25} /> Intereses
+          </h2>
+          <ul className="list-disc pl-5">
+            {userData.interests.map((interest, index) => (
+              <li key={index} className="text-gray-700">
+                {interest}
+              </li>
+            ))}
+          </ul>
         </Card>
       </div>
     </div>

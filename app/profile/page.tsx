@@ -1,13 +1,13 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
-import CreditIcon from "../../../public/qc-coin.png"; // Icono para los créditos
-import StatusIcon from "../../../public/status-icon.png"; // Icono para el estatus
-import AchievementIcon from "../../../public/holo-red.png"; // Icono para los logros
+import CreditIcon from "../../public/qc-coin.png"; // Icono para los créditos
+import StatusIcon from "../../public/status-icon.png"; // Icono para el estatus
+import AchievementIcon from "../../public/holo-red.png"; // Icono para los logros
 import { Separator } from "@/components/ui/separator";
 
-export default function Profile({ params }: { params: { username: string } }) {
+export default function Profile() {
   const userData = {
-    username: params.username || "Anónimo",
+    username: "Anónimo", // TODO: Obtener el usuario real
     cyberStatus: "Ciberexplorador",
     quantumCredits: 1250,
     holoAchievements: [

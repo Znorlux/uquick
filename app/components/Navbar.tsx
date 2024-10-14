@@ -10,28 +10,10 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { UserDropdown } from "./UserDropdown";
-import { unstable_noStore as noStore } from "next/cache";
-import prisma from "../lib/db";
-
-async function getData(userId: string) {
-  noStore();
-  const data = await prisma.user.findUnique({
-    where: {
-      id: userId,
-    },
-    select: {
-      userName: true,
-    },
-  });
-
-  return data;
-}
 
 export async function Navbar() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-
-  const data = user ? await getData(user.id) : null;
 
   return (
     <nav className="h-[10vh] w-full flex items-center border-b px-5 lg:px-14 justify-between">
@@ -51,7 +33,7 @@ export async function Navbar() {
       <div className="flex items-center gap-x-4">
         <ThemeToggle />
         {user ? (
-          <UserDropdown userImage={user.picture} userName={data?.userName} />
+          <UserDropdown userImage={user.picture} />
         ) : (
           <div className="flex items-center gap-x-4">
             <Button variant="secondary" asChild>

@@ -51,7 +51,10 @@ export function PostCard({
             r/{subName}
           </Link>
           <p className="text-xs text-muted-foreground">
-            Posted by: <span className="hover:text-primary">u/{userName}</span>
+            Posted by:{" "}
+            <Link className="hover:text-primary" href={`u/${userName}`}>
+              u/{userName}
+            </Link>
           </p>
         </div>
 

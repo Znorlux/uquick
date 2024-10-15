@@ -80,7 +80,7 @@ export default function Home({
                 className="w-10 h-16 -mt-6"
               />
               <h1 className="font-medium pl-3">Home</h1>
-              <h1 className="font-medium text-muted-foreground ml-auto">
+              <h1 className="font-medium text-primary ml-auto">
                 <Link href="/communities">Communities</Link>
               </h1>
             </div>

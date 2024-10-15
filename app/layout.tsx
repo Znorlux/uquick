@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -28,10 +28,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
-
-          <Toaster />
+          {/* El contenido crecerá y ocupará el espacio disponible */}
+          <main className="flex-grow">{children}</main>
+          {/* Footer siempre estará al final */}
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

@@ -45,6 +45,22 @@ export async function updateUsername(prevState: any, formData: FormData) {
   }
 }
 
+export async function getAllCommunities() {
+  const communities = await prisma.subreddit.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+    select: {
+      name: true,
+      description: true,
+      id: true,
+      createdAt: true,
+    },
+  });
+
+  return communities;
+}
+
 export async function createCommunity(prevState: any, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();

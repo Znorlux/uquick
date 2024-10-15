@@ -79,6 +79,9 @@ export default function Home({
                 className="w-10 h-16 -mt-6"
               />
               <h1 className="font-medium pl-3">Home</h1>
+              <h1 className="font-medium text-muted-foreground ml-auto">
+                <Link href="/communities">Communities</Link>
+              </h1>
             </div>
             <p className="text-sm text-muted-foreground pt-2">
               Your Home Reddit frontpage. Come here to check in with your

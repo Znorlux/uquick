@@ -13,6 +13,7 @@ import { SuspenseCard } from "./components/SuspenseCard";
 import Pagination from "./components/Pagination";
 import { unstable_noStore as noStore } from "next/cache";
 import { TrendingCommunities } from "./components/TrendingCommunities"; // Importamos el nuevo componente
+import Footer from "./components/Footer";
 
 async function getData(searchParam: string) {
   noStore();

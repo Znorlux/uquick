@@ -30,7 +30,7 @@ export function PostCard({
   commentAmount,
 }: iAppProps) {
   return (
-    <Card className="flex relative overflow-hidden hover:bg-gray-100 transition-all">
+    <Card className="flex relative overflow-hidden hover:bg-gray-100 transition-all dark:hover:bg-zinc-900">
       <div className="flex flex-col items-center gap-y-2 bg-muted p-">
         <form action={handleVote}>
           <input type="hidden" name="voteDirection" value="UP" />

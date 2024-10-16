@@ -14,7 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden mt-[20vh]">
+    <footer className="relative overflow-hidden mt-[40vh]">
       <div className="absolute inset-0 overflow-hidden">
         <svg width="100%" height="100%" preserveAspectRatio="none">
           <defs>

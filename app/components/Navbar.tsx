@@ -1,6 +1,6 @@
 import Link from "next/link";
 import RedditText from "../../public/Uquick-L.png";
-import redditMobile from "../../public/Robot.png";
+import redditMobile from "../../public/logo-uquick.png";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
@@ -21,12 +21,14 @@ export async function Navbar() {
         <Image
           src={redditMobile}
           alt="Reddit mobile icon"
-          className="h-10 w-fit"
+          className="mt-2"
+          height={100}
+          width={100}
         />
         <Image
           src={RedditText}
           alt="Reddit Desktop"
-          className="h-9 w-fit hidden lg:block"
+          className="h-9 w-fit hidden lg:block absolute left-36"
         />
       </Link>
 

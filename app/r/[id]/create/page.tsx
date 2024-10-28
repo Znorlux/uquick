@@ -15,27 +15,33 @@ import { UploadDropzone } from "@/app/components/Uploadthing";
 import { useState } from "react";
 import { createPost } from "@/app/actions";
 import { JSONContent } from "@tiptap/react";
+import { title } from "process";
 
 const rules = [
   {
     id: 1,
-    text: "Remember the human",
+    title: "Respeta a todos los usuarios",
+    text: "No se tolerarán insultos ni lenguaje ofensivo.",
   },
   {
     id: 2,
-    text: "Behave like you would in real life",
+    title: "Comparte información verificable",
+    text: "Publica contenido preciso y evita difundir rumores.",
   },
   {
     id: 3,
-    text: "Look for the original source of content",
+    title: "Mantén tus datos actualizados",
+    text: "Usa información correcta para solicitudes y registros.",
   },
   {
     id: 4,
-    text: "Search for duplication before posting",
+    title: "Evita el spam",
+    text: "No publiques contenido repetitivo o irrelevante.",
   },
   {
     id: 5,
-    text: "Read the community guidlines",
+    title: "Protege la privacidad",
+    text: "No compartas información personal de otros sin su consentimiento.",
   },
 ];
 
@@ -53,7 +59,7 @@ export default function CreatePostRoute({
     <div className="max-w-[1000px] mx-auto flex gap-x-10 mt-4">
       <div className="w-[65%] flex flex-col gap-y-5">
         <h1 className="font-semibold">
-          Subreddit:{" "}
+          Comunidad (subreddit):{" "}
           <Link href={`/r/${params.id}`} className="text-primary">
             r/{params.id}
           </Link>
@@ -61,11 +67,11 @@ export default function CreatePostRoute({
         <Tabs defaultValue="post" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="post">
-              <Text className="h-4 w-4 mr-2" /> Post
+              <Text className="h-4 w-4 mr-2" /> Publicación
             </TabsTrigger>
             <TabsTrigger value="image">
               <Video className="h-4 w-4 mr-2" />
-              Image & Video
+              Imagen y Video
             </TabsTrigger>
           </TabsList>
           <TabsContent value="post">
@@ -78,11 +84,11 @@ export default function CreatePostRoute({
                 />
                 <input type="hidden" name="subName" value={params.id} />
                 <CardHeader>
-                  <Label>Title</Label>
+                  <Label>Titulo</Label>
                   <Input
                     required
                     name="title"
-                    placeholder="Title"
+                    placeholder="Titulo"
                     value={title ?? ""}
                     onChange={(e) => setTitle(e.target.value)}
                   />
@@ -90,7 +96,7 @@ export default function CreatePostRoute({
                   <TipTapEditor setJson={setJson} json={json} />
                 </CardHeader>
                 <CardFooter>
-                  <SubmitButton text="Create Post" />
+                  <SubmitButton text="Crear publicación" />
                 </CardFooter>
               </form>
             </Card>
@@ -127,7 +133,7 @@ export default function CreatePostRoute({
         <Card className="flex flex-col p-4">
           <div className="flex items-center gap-x-2">
             <Image className="h-10 w-10" src={pfp} alt="pfp" />
-            <h1 className="font-medium">Posting to Reddit</h1>
+            <h1 className="font-medium">Reglas de uQuick</h1>
           </div>
           <Separator className="mt-2" />
 
@@ -135,7 +141,9 @@ export default function CreatePostRoute({
             {rules.map((item) => (
               <div key={item.id}>
                 <p className="text-sm font-medium">
-                  {item.id}. {item.text}
+                  {item.id}.<span className="font-bold">{item.title}</span>:
+                  <br />
+                  {item.text}
                 </p>
                 <Separator className="mt-2" />
               </div>

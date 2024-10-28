@@ -40,12 +40,12 @@ export function SettingsForm({
   }, [state, toast]);
   return (
     <form action={formAction}>
-      <h1 className="text-3xl font-extrabold tracking-tight">Settings</h1>
+      <h1 className="text-3xl font-extrabold tracking-tight">Configuración</h1>
 
       <Separator className="my-4" />
-      <Label className="text-lg">Username</Label>
+      <Label className="text-lg">Nombre de usuario</Label>
       <p className="text-muted-foreground">
-        In this Settings page you can change your username!
+        En esta página puedes cambiar tu nombre de usuario.
       </p>
 
       <Input
@@ -63,9 +63,9 @@ export function SettingsForm({
 
       <div className="w-full flex mt-5 gap-x-5 justify-end">
         <Button variant="secondary" asChild type="button">
-          <Link href="/">Cancel</Link>
+          <Link href="/">Cancelar</Link>
         </Button>
-        <SubmitButton text="Change Username" />
+        <SubmitButton text="Cambiar nombre de usuario" />
       </div>
     </form>
   );

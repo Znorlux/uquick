@@ -97,7 +97,10 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 
           <div className="p-2 w-full">
             <p className="text-xs text-muted-foreground">
-              Posted by u/{data.User?.userName}
+              Creado por{" "}
+              <Link href={process.env.APP_URL + `/u/${data.User?.userName}`}>
+                u/{data.User?.userName}
+              </Link>
             </p>
 
             <h1 className="font-medium mt-1 text-lg">{data.title}</h1>

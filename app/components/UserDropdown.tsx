@@ -40,22 +40,22 @@ export function UserDropdown({ userImage }: iAppProps) {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <Link className="w-full" href="/r/create">
-            Create Community
+            Crear Comunidad
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <Link className="w-full" href="/create">
-            Create Post
+            Crear Publicación
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <Link className="w-full" href="/settings">
-            Settings
+            Configuración
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogoutLink className="w-full">Logout</LogoutLink>
+          <LogoutLink className="w-full">Salir</LogoutLink>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

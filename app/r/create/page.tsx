@@ -33,12 +33,16 @@ export default function SubredditPage() {
     <div className="max-w-[1000px] mx-auto  flex flex-col mt-4">
       <form action={formAction}>
         <h1 className="text-3xl font-extrabold tracking-tight">
-          Create Community
+          Crear comunidad
         </h1>
         <Separator className="my-4" />
         <Label className="text-lg">Name</Label>
         <p className="text-muted-foreground">
-          Community names including capitalization cannot be changed!
+          Crea tu propia comunidad para interacturar, resolver dudas y obtener
+          recompensas.
+        </p>
+        <p className=" text-muted-foreground text-xs font-bold mt-1">
+          Los nombres de las comunidades no pueden ser modificados.
         </p>
 
         <div className="relative mt-3">
@@ -57,9 +61,9 @@ export default function SubredditPage() {
 
         <div className="w-full flex mt-5 gap-x-5 justify-end">
           <Button variant="secondary" asChild>
-            <Link href="/">Cancel</Link>
+            <Link href="/">Cancelar</Link>
           </Button>
-          <SubmitButton text="Create Community" />
+          <SubmitButton text="Crear comunidad" />
         </div>
       </form>
     </div>

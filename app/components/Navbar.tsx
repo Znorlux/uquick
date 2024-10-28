@@ -25,7 +25,10 @@ export async function Navbar() {
           width={90}
         />
         <span
-          style={{ fontFamily: "Madera W01 ExtraBold" }}
+          style={{
+            fontFamily: "Madera W01 ExtraBold",
+            textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
+          }}
           className="text-[2.5rem]"
         >
           uQuick

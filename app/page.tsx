@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import Banner from "../public/banner.png";
-import HelloImage from "../public/hero-image.png";
+import HelloImage from "../public/wolf-hero.png";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -77,10 +77,10 @@ export default function Home({
               <Image
                 src={HelloImage}
                 alt="Hello Image"
-                className="w-10 h-16 -mt-6"
+                className="w-20 h-18 -mt-8"
               />
-              <h1 className="font-medium pl-3">Inicio</h1>
-              <h1 className="font-medium text-primary ml-auto">
+              <h1 className="font-medium -pl-1  text-lg">Home</h1>
+              <h1 className="font-medium text-primary ml-auto hover:underline">
                 <Link href="/communities">Comunidades</Link>
               </h1>
             </div>

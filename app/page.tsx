@@ -79,9 +79,9 @@ export default function Home({
                 alt="Hello Image"
                 className="w-10 h-16 -mt-6"
               />
-              <h1 className="font-medium pl-3">Home</h1>
+              <h1 className="font-medium pl-3">Inicio</h1>
               <h1 className="font-medium text-primary ml-auto">
-                <Link href="/communities">Communities</Link>
+                <Link href="/communities">Comunidades</Link>
               </h1>
             </div>
             <p className="text-sm text-muted-foreground pt-2">
@@ -95,10 +95,10 @@ export default function Home({
 
             <div className="flex flex-col gap-y-3 mt-5">
               <Button asChild variant="secondary">
-                <Link href="/r/home/create">Create Post</Link>
+                <Link href="/r/home/create">Crear publiación</Link>
               </Button>
               <Button asChild>
-                <Link href="/r/create">Create Community</Link>
+                <Link href="/r/create">Crear comunidad</Link>
               </Button>
             </div>
           </div>

@@ -71,3 +71,18 @@
 .ProseMirror:focus {
   outline: none;
 }
+
+@font-face {
+  font-family: "Madera W01 ExtraBold";
+  src: url("https://db.onlinewebfonts.com/t/a21846460793db069fda151470ba3c68.eot");
+  src: url("https://db.onlinewebfonts.com/t/a21846460793db069fda151470ba3c68.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a21846460793db069fda151470ba3c68.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a21846460793db069fda151470ba3c68.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/a21846460793db069fda151470ba3c68.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a21846460793db069fda151470ba3c68.svg#Madera W01 ExtraBold")
+      format("svg");
+}

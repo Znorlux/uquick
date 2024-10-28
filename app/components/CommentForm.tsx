@@ -22,13 +22,13 @@ export function CommentForm({ postId }: iAppPorps) {
       ref={ref}
     >
       <input type="hidden" name="postId" value={postId} />
-      <Label>Comment right here</Label>
+      <Label>Comentarios por aquí</Label>
       <Textarea
-        placeholder="What are your thoughts?"
+        placeholder="¿Que opinas de esta publicación?"
         className="w-full mt-1 mb-2"
         name="comment"
       />
-      <SubmitButton text="Comment" />
+      <SubmitButton text="Comentar" />
     </form>
   );
 }

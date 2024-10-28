@@ -82,7 +82,7 @@ export function PostCard({
           <div className="flex items-center gap-x-1">
             <MessageCircle className="h-4 w-4 text-muted-foreground" />
             <p className="text-muted-foreground font-medium text-xs">
-              {commentAmount} Comments
+              {commentAmount} Comentarios
             </p>
           </div>
 

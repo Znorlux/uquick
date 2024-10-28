@@ -136,8 +136,8 @@ export function GridPattern({
             height={height - 1}
             x={x * width + 1}
             y={y * height + 1}
-            fill="currentColor"
-            strokeWidth="0"
+            fill="#f9802d"
+            strokeWidth="1"
           />
         ))}
       </svg>

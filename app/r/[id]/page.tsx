@@ -87,7 +87,7 @@ export default async function SubRedditRoute({
             </div>
 
             <h2 className="mt-6 text-xl font-semibold">
-              No post have been created
+              No se han creado publicaciones aún.
             </h2>
           </div>
         ) : (
@@ -118,7 +118,9 @@ export default async function SubRedditRoute({
 
       <div className="w-[35%]">
         <Card>
-          <div className="bg-muted p-4 font-semibold">About Community</div>
+          <div className="bg-muted p-4 font-semibold">
+            Acerca de esta comunidad
+          </div>
           <div className="p-4">
             <div className="flex items-center gap-x-3">
               <Image
@@ -146,7 +148,7 @@ export default async function SubRedditRoute({
             <div className="flex items-center gap-x-2 mt-4">
               <Cake className="h-5 w-5 text-muted-foreground" />
               <p className="text-muted-foreground font-medium text-sm">
-                Created:{" "}
+                Creado el:{" "}
                 {new Date(data?.createdAt as Date).toLocaleDateString("en-us", {
                   weekday: "long",
                   year: "numeric",
@@ -161,7 +163,7 @@ export default async function SubRedditRoute({
               <Link
                 href={user?.id ? `/r/${data?.name}/create` : "/api/auth/login"}
               >
-                Create Post
+                Crear publicación
               </Link>
             </Button>
           </div>

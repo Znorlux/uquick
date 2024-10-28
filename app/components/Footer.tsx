@@ -6,11 +6,15 @@ import { Home, Info, BookUser, FileText, HelpCircle } from "lucide-react";
 
 const Footer = () => {
   const items = [
-    { title: "Home", href: "/", icon: Home },
-    { title: "Communities", href: "/communities", icon: BookUser },
-    { title: "About", href: "/about", icon: Info },
-    { title: "Terms of Service", href: "/terms-of-service", icon: FileText },
-    { title: "Questions", href: "/questions", icon: HelpCircle },
+    { title: "Inicio", href: "/", icon: Home },
+    { title: "Comunidades", href: "/communities", icon: BookUser },
+    { title: "Información", href: "/about", icon: Info },
+    {
+      title: "Terminos de Servicio",
+      href: "/terms-of-service",
+      icon: FileText,
+    },
+    { title: "Preguntas", href: "/questions", icon: HelpCircle },
   ];
 
   return (
@@ -55,10 +59,15 @@ const Footer = () => {
         <div className="text-center">
           <div className="inline-block mb-4">
             {/* Placeholder for logo - en desarrollo */}
-            <span className="text-2xl font-bold dark:text-white">Uquick</span>
+            <span
+              className="text-2xl dark:text-white"
+              style={{ fontFamily: "Madera W01 ExtraBold" }}
+            >
+              uQuick
+            </span>
           </div>
           <div className="text-sm text-gray-800 dark:text-gray-400">
-            &copy; {new Date().getFullYear()} Uquick. All rights reserved.
+            &copy; {new Date().getFullYear()} uQuick. All rights reserved.
           </div>
         </div>
       </div>

@@ -85,8 +85,8 @@ export default function Home({
               </h1>
             </div>
             <p className="text-sm text-muted-foreground pt-2">
-              Your Home Reddit frontpage. Come here to check in with your
-              favorite communites!
+              Tu feed personalizado de publicaciones. Resuelve tus dudas o ayuda
+              a otros para ganar increibles premios.
             </p>
             <Separator className="my-5" />
 

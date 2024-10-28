@@ -39,10 +39,10 @@ export async function Navbar() {
         ) : (
           <div className="flex items-center gap-x-4">
             <Button variant="secondary" asChild>
-              <RegisterLink>Sign up</RegisterLink>
+              <RegisterLink>Registrarse</RegisterLink>
             </Button>
             <Button asChild>
-              <LoginLink>Log in</LoginLink>
+              <LoginLink>Ingresar</LoginLink>
             </Button>
           </div>
         )}

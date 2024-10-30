@@ -1,11 +1,5 @@
 import { Loader2, Plus, Send } from "lucide-react";
-import React, {
-  ChangeEvent,
-  Dispatch,
-  FormEvent,
-  SetStateAction,
-  useState,
-} from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import SelectedImages from "./SelectedImages";
 import { ChatRequestOptions } from "ai";
 
@@ -30,96 +24,84 @@ const InputForm = ({
   stop,
 }: Props) => {
   const [images, setImages] = useState<string[]>([]);
+
   const handleImageSelection = async (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files) return;
-    const imagePromises = [];
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      // Process the file
-      const reader = new FileReader();
 
-      imagePromises.push(
-        new Promise<string>((resolve, reject) => {
-          // set onload on reader
-          reader.onload = (e) => {
-            const base64String = e.target?.result?.toString();
-            // const base64String = e.target?.result?.toString().split(",")[1];
-            resolve(base64String as string);
-          };
-          // set onerror on reader
-          reader.onerror = (error) => reject(error);
-          reader.readAsDataURL(file);
-        })
-      );
-    }
+    const imagePromises = Array.from(files).map((file) => {
+      return new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => resolve(e.target?.result?.toString() || "");
+        reader.onerror = (error) => reject(error);
+        reader.readAsDataURL(file);
+      });
+    });
 
     try {
-      const base64Strings = await Promise.all(imagePromises); // Wait for all conversions
-      // setImages(base64Strings as string[]);
-      setImages((prevImages: string[]) => {
-        // Explicitly type the result as a string array
-        const updatedImages: string[] = [
-          ...prevImages,
-          ...(base64Strings as string[]),
-        ];
-        // const updatedImages: string[] = base64Strings as string[];
-        return updatedImages;
-      });
+      const base64Strings = await Promise.all(imagePromises);
+      setImages((prev) => [...prev, ...base64Strings]);
     } catch (error) {
       console.error("Error reading image:", error);
     }
   };
+
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        handleSubmit(event, {
-          data: {
-            images: JSON.stringify(images),
-          },
-        });
-      }}
-      className="w-full flex flex-row gap-2 items-center h-full mt-5"
-    >
-      <div className="border flex flex-row relative">
-        <Plus
-          onClick={() => document.getElementById("fileInput")?.click()} // Click event handler
-          className="cursor-pointer p-3 h-10 w-10 stroke-stone-500"
-        />
+    <>
+      {images.length > 0 && (
         <SelectedImages images={images} setImages={setImages} />
-      </div>
-      <input
-        className="hidden"
-        id="fileInput"
-        type="file"
-        accept="image/*"
-        multiple
-        onChange={handleImageSelection}
-      />
-      <input
-        type="text"
-        placeholder={isLoading ? "Generating . . ." : "ask something . . . "}
-        value={input}
-        disabled={isLoading}
-        onChange={handleInputChange}
-        className="border-b border-dashed outline-none w-full py-2 text-[#0842A0] placeholder:text-[#0842A099] text-right focus:placeholder-transparent disabled:bg-transparent"
-      />
-      <button
-        type="submit"
-        className="rounded-full shadow-md border flex flex-row"
+      )}
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(e, { data: { images: JSON.stringify(images) } });
+        }}
+        className="flex items-center gap-2"
       >
-        {isLoading ? (
-          <Loader2
-            onClick={stop}
-            className="p-3 h-10 w-10 stroke-stone-500 animate-spin"
+        <button
+          type="button"
+          onClick={() => document.getElementById("fileInput")?.click()}
+          className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+        >
+          <Plus className="w-5 h-5 text-gray-500" />
+        </button>
+
+        <input
+          type="file"
+          id="fileInput"
+          multiple
+          accept="image/*"
+          onChange={handleImageSelection}
+          className="hidden"
+        />
+
+        <div className="flex-grow relative">
+          <input
+            type="text"
+            value={input}
+            onChange={handleInputChange}
+            disabled={isLoading}
+            placeholder={
+              isLoading ? "Generando respuesta..." : "Escribe un mensaje..."
+            }
+            className="w-full px-4 py-2 rounded-full border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none disabled:bg-gray-50"
           />
-        ) : (
-          <Send className="p-3 h-10 w-10 stroke-stone-500" />
-        )}
-      </button>
-    </form>
+        </div>
+
+        <button
+          type="submit"
+          disabled={isLoading && !input.trim()}
+          className="p-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white transition-colors disabled:bg-gray-300"
+        >
+          {isLoading ? (
+            <Loader2 className="w-5 h-5 animate-spin" onClick={stop} />
+          ) : (
+            <Send className="w-5 h-5" />
+          )}
+        </button>
+      </form>
+    </>
   );
 };
-
 export default InputForm;

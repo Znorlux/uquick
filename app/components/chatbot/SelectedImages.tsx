@@ -8,37 +8,26 @@ type Props = {
 };
 
 const SelectedImages = ({ images, setImages }: Props) => {
-  const maxImageDisplayed = 5;
   return (
-    <>
-      <div className="absolute -top-10 flex flex-row gap-2">
-        {images.map((img, idx) => {
-          if (idx < maxImageDisplayed) {
-            return (
-              <Image
-                className="h-9 w-auto shadow-md hover:h-auto max-w-96 hover:z-10 hover:shadow-2xl"
-                width={100}
-                height={100}
-                key={idx}
-                src={img}
-                alt={""}
-              />
-            );
-          }
-        })}
-        <span className="text-xs w-14 text-left">
-          {images.length > maxImageDisplayed
-            ? `${images.length - maxImageDisplayed + " more"}`
-            : ""}
-        </span>
-        {images.length > 0 && (
-          <X
-            className="absolute -left-8 cursor-pointer rounded-full h-6 w-6 p-1 shadow-md"
-            onClick={() => setImages([])}
+    <div className="flex gap-2 mb-4 overflow-x-auto py-2">
+      {images.map((img, idx) => (
+        <div key={idx} className="relative group">
+          <Image
+            src={img}
+            alt=""
+            width={60}
+            height={60}
+            className="rounded-lg shadow-md object-cover w-15 h-15 transition-transform group-hover:scale-105"
           />
-        )}
-      </div>
-    </>
+          <button
+            onClick={() => setImages(images.filter((_, i) => i !== idx))}
+            className="absolute -top-2 -right-2 bg-white rounded-full p-0.5 shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            <X className="w-3 h-3 text-gray-500" />
+          </button>
+        </div>
+      ))}
+    </div>
   );
 };
 

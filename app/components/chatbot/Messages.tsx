@@ -1,5 +1,4 @@
 import React from "react";
-import Markdown from "./Markdown";
 import { Bot, User2 } from "lucide-react";
 import { Message } from "ai/react";
 
@@ -10,24 +9,26 @@ type Props = {
 
 const Messages = ({ messages, isLoading }: Props) => {
   return (
-    <div
-      id="chatbox"
-      className="flex flex-col-reverse w-full text-left mt-4 gap-4 whitespace-pre-wrap"
-    >
-      {messages.map((m, index) => {
-        return (
+    <div className="flex flex-col space-y-4">
+      {messages.map((m, index) => (
+        <div
+          key={index}
+          className={`flex items-start gap-3 ${
+            m.role === "user" ? "flex-row-reverse" : ""
+          }`}
+        >
           <div
-            key={index}
-            className={`p-4 shadow-md rounded-md ml-10 relative ${
-              m.role === "user" ? "bg-stone-300" : ""
+            className={`p-2 rounded-full shadow-sm ${
+              m.role === "user"
+                ? "bg-orange-400 text-white"
+                : "bg-white border border-gray-200"
             }`}
           >
-            <Markdown text={m.content} />
             {m.role === "user" ? (
-              <User2 className="absolute -left-10 top-2 border rounded-full p-1 shadow-lg" />
+              <User2 className="w-5 h-5" />
             ) : (
               <Bot
-                className={`absolute top-2 -left-10 border rounded-full p-1 shadow-lg stroke-[#0842A0] ${
+                className={`w-5 h-5 ${
                   isLoading && index === messages.length - 1
                     ? "animate-bounce"
                     : ""
@@ -35,8 +36,17 @@ const Messages = ({ messages, isLoading }: Props) => {
               />
             )}
           </div>
-        );
-      })}
+          <div
+            className={`relative p-4 rounded-2xl max-w-[80%] ${
+              m.role === "user"
+                ? "bg-orange-300 text-white"
+                : "bg-white border border-gray-200"
+            }`}
+          >
+            <div className="prose prose-sm">{m.content}</div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -1,19 +1,7 @@
 "use client";
 import { useChat } from "ai/react";
-import {
-  Bot,
-  Loader,
-  Loader2,
-  MoreHorizontal,
-  Plus,
-  Send,
-  User2,
-  X,
-} from "lucide-react";
-import Image from "next/image";
-import Markdown from "@/app/components/chatbot/Markdown";
-import { ChangeEvent, useState } from "react";
-import SelectedImages from "@/app/components/chatbot/SelectedImages";
+import { Card, CardContent } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import Messages from "@/app/components/chatbot/Messages";
 import InputForm from "@/app/components/chatbot/InputForm";
 
@@ -24,15 +12,19 @@ export default function Chatbot() {
     });
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-12 text-lg">
-      <InputForm
-        input={input}
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-        isLoading={isLoading}
-        stop={stop}
-      />
-      <Messages messages={messages} isLoading={isLoading} />
-    </main>
+    <Card className="w-full max-w-4xl mx-auto h-[80vh] flex flex-col bg-gradient-to-b from-white to-gray-50">
+      <CardContent className="flex flex-col h-full p-6">
+        <ScrollArea className="flex-grow mb-6 pr-4">
+          <Messages messages={messages} isLoading={isLoading} />
+        </ScrollArea>
+        <InputForm
+          input={input}
+          handleInputChange={handleInputChange}
+          handleSubmit={handleSubmit}
+          isLoading={isLoading}
+          stop={stop}
+        />
+      </CardContent>
+    </Card>
   );
 }

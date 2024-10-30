@@ -21,6 +21,7 @@ model User {
   lastName          String
   imageUrl          String?
   userName          String?     @unique
+  walletAddress     String?
   createdSubreddits Subreddit[]
 
   createdAt DateTime  @default(now())

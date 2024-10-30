@@ -34,7 +34,6 @@ export async function Navbar() {
             <span
               style={{
                 fontFamily: "Madera W01 ExtraBold",
-                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
                 background: "linear-gradient(45deg, #FF6F61, #FF8B66)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -51,7 +50,7 @@ export async function Navbar() {
               href="/chatbot"
               className="text-foreground/80 hover:text-foreground font-semibold transition-colors relative group"
             >
-              QuickFox
+              QuickFoxAI
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link

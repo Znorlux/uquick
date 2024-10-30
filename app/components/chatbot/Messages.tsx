@@ -2,6 +2,9 @@
 import React from "react";
 import { Bot, User2 } from "lucide-react";
 import { Message } from "ai/react";
+import Markdown from "./Markdown";
+import QuickFoxIcon from "@/public/quickfox-ai.svg";
+import Image from "next/image";
 
 type Props = {
   messages: Message[];
@@ -28,8 +31,10 @@ const Messages = ({ messages, isLoading }: Props) => {
             {m.role === "user" ? (
               <User2 className="w-5 h-5" />
             ) : (
-              <Bot
-                className={`w-5 h-5 ${
+              <Image
+                src={QuickFoxIcon}
+                alt="QuickFox AI"
+                className={`w-11 h-11 ${
                   isLoading && index === messages.length - 1
                     ? "animate-bounce"
                     : ""
@@ -40,11 +45,11 @@ const Messages = ({ messages, isLoading }: Props) => {
           <div
             className={`relative p-4 rounded-2xl max-w-[80%] ${
               m.role === "user"
-                ? "bg-orange-300 text-white"
+                ? "bg-orange-300 text-gray-800"
                 : "bg-white border border-gray-200"
             }`}
           >
-            <div className="prose prose-sm">{m.content}</div>
+            <Markdown text={m.content} />
           </div>
         </div>
       ))}

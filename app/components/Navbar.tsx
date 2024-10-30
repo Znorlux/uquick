@@ -60,6 +60,13 @@ export async function Navbar() {
               Comunidades
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </Link>
+            <Link
+              href="/airdrop"
+              className="text-primary/80 hover:text-foreground font-semibold transition-colors relative group"
+            >
+              AirDrop Rewards
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </Link>
           </div>
 
           {/* Controles de usuario */}

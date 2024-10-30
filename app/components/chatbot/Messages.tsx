@@ -1,3 +1,4 @@
+// Messages.tsx
 import React from "react";
 import { Bot, User2 } from "lucide-react";
 import { Message } from "ai/react";

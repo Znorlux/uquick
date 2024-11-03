@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import CreditIcon from "../../public/qc-coin.png"; // Icono para los créditos
-import StatusIcon from "../../public/status-icon.png"; // Icono para el estatus
+import StatusIcon from "../../public/explorer.png"; // Icono para el estatus
 import AchievementIcon from "../../public/holo-red.png"; // Icono para los logros
 import { BellIcon, Contact, BookMarked, Book } from "lucide-react";
 
@@ -48,8 +48,11 @@ export default function Profile() {
 
       <div className="grid grid-cols-2 gap-8">
         {/* Estatus Cibernético */}
-        <Card className="col-span-2 flex items-center p-4 bg-gradient-to-r from-blue-600 to-purple-500 text-white">
-          <Image src={StatusIcon} alt="Status" width={50} height={50} />
+        <Card
+          className="col-span-2 flex items-center p-4 bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500
+ text-white"
+        >
+          <Image src={StatusIcon} alt="Status" width={80} height={80} />
           <div className="ml-4">
             <h2 className="text-xl font-bold">{userData.cyberStatus}</h2>
             <p>¡Sigue contribuyendo para alcanzar nuevos niveles de estatus!</p>
@@ -65,10 +68,10 @@ export default function Profile() {
               width={30}
               height={30}
             />{" "}
-            Créditos Cuánticos
+            Créditos Cuánticos UNI
           </h2>
           <p className="text-blue-600 text-2xl font-bold">
-            {userData.quantumCredits} QCs
+            {userData.quantumCredits} UNI
           </p>
           <p className="text-sm text-gray-600">
             ¡Utiliza tus créditos para desbloquear beneficios exclusivos!
@@ -148,7 +151,9 @@ export default function Profile() {
 
         {/* Puntos de Innovación */}
         <Card className="p-4 col-span-2 bg-yellow-100">
-          <h2 className="text-lg font-bold">Puntos de Innovación</h2>
+          <h2 className="text-lg font-bold dark:text-black">
+            Puntos de Innovación
+          </h2>
           <p className="text-yellow-600 text-2xl font-bold">
             {userData.innovationPoints} puntos
           </p>

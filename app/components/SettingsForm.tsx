@@ -10,6 +10,7 @@ import { SubmitButton } from "./SubmitButtons";
 import { useFormState } from "react-dom";
 import { useEffect } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { Settings } from "lucide-react";
 
 const initialState = {
   message: "",
@@ -40,12 +41,18 @@ export function SettingsForm({
   }, [state, toast]);
   return (
     <form action={formAction}>
-      <h1 className="text-3xl font-extrabold tracking-tight">Configuración</h1>
+      <div className="flex">
+        <Settings size={24} className="mt-[0.4rem] mr-2" />
+        <h1 className="text-3xl font-extrabold tracking-tight">
+          Configuración
+        </h1>
+      </div>
 
       <Separator className="my-4" />
       <Label className="text-lg">Nombre de usuario</Label>
       <p className="text-muted-foreground">
-        En esta página puedes cambiar tu nombre de usuario.
+        En este campo puedes cambiar tu nombre de usuario. Sé creativo y único.
+        😉
       </p>
 
       <Input

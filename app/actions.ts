@@ -241,3 +241,55 @@ export async function createComment(formData: FormData) {
 
   revalidatePath(`/post/${postId}`);
 }
+
+// --- ADD OR UPDATE WALLET ADDRESS --- //
+export async function updateWalletAddress(prevState: any, formData: FormData) {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+
+  if (!user) {
+    return redirect("/api/auth/login");
+  }
+
+  const newWalletAddress = formData.get("walletAddress") as string;
+
+  // Obtener la wallet actual del usuario
+  const existingUser = await prisma.user.findUnique({
+    where: { id: user.id },
+    select: { walletAddress: true },
+  });
+
+  if (existingUser?.walletAddress === newWalletAddress) {
+    return {
+      message: "La dirección de wallet es la misma que la registrada",
+      status: "error",
+    };
+  }
+
+  try {
+    await prisma.user.update({
+      where: {
+        id: user.id,
+      },
+      data: {
+        walletAddress: newWalletAddress,
+      },
+    });
+
+    return {
+      message: "Dirección de wallet actualizada con éxito",
+      status: "green",
+    };
+  } catch (e) {
+    if (e instanceof Prisma.PrismaClientKnownRequestError) {
+      if (e.code === "P2002") {
+        return {
+          message: "Esta dirección de wallet ya está en uso",
+          status: "error",
+        };
+      }
+    }
+
+    throw e;
+  }
+}

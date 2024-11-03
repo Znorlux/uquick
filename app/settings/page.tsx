@@ -3,6 +3,7 @@ import prisma from "../lib/db";
 import { redirect } from "next/navigation";
 import { SettingsForm } from "../components/SettingsForm";
 import { unstable_noStore as noStore } from "next/cache";
+import WalletForm from "../components/WalletForm";
 
 async function getData(userId: string) {
   noStore();
@@ -12,6 +13,7 @@ async function getData(userId: string) {
     },
     select: {
       userName: true,
+      walletAddress: true, // Agregamos la walletAddress
     },
   });
 
@@ -30,6 +32,7 @@ export default async function SettingsPage() {
   return (
     <div className="max-w-[1000px] mx-auto flex flex-col mt-4">
       <SettingsForm username={data?.userName} />
+      <WalletForm currentWallet={data?.walletAddress ?? null} />
     </div>
   );
 }

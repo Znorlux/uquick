@@ -6,6 +6,9 @@ import prisma from "./lib/db";
 import { Prisma, TypeOfVote } from "@prisma/client";
 import { JSONContent } from "@tiptap/react";
 import { revalidatePath } from "next/cache";
+import { transfer } from "thirdweb/extensions/erc20";
+import { contract, account } from "./client";
+import { sendTransaction } from "thirdweb";
 
 export async function updateUsername(prevState: any, formData: FormData) {
   const { getUser } = getKindeServerSession();
@@ -186,6 +189,34 @@ export async function handleVote(formData: FormData) {
       userId: user.id,
     },
   });
+  if (voteDirection === "UP") {
+    // Obtener la información del post y su autor
+    const post = await prisma.post.findUnique({
+      where: { id: postId },
+      include: { User: { select: { walletAddress: true } } },
+    });
+
+    if (post?.User?.walletAddress) {
+      try {
+        const transaction = transfer({
+          contract,
+          to: post.User.walletAddress,
+          amount: "0.01",
+        });
+        const result = await sendTransaction({
+          transaction,
+          account,
+        });
+        console.log("Result:", result);
+      } catch (error) {
+        console.error("Error en la transferencia de UNI:", error);
+        return {
+          status: "error",
+          message: "Hubo un problema con la recompensa.",
+        };
+      }
+    }
+  }
 
   if (vote) {
     if (vote.voteType === voteDirection) {

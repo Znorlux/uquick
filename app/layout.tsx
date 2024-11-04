@@ -5,6 +5,7 @@ import { Navbar } from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/app/components/Footer";
+import { ThirdwebProvider } from "thirdweb/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,19 +22,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {/* El contenido crecerá y ocupará el espacio disponible */}
-          <main className="flex-grow">{children}</main>
-          {/* Footer siempre estará al final */}
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
+        <ThirdwebProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            {/* El contenido crecerá y ocupará el espacio disponible */}
+            <main className="flex-grow">{children}</main>
+            {/* Footer siempre estará al final */}
+            <Footer />
+            <Toaster />
+          </ThemeProvider>
+        </ThirdwebProvider>
       </body>
     </html>
   );

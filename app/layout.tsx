@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <ThirdwebProvider>
+        {/*<ThirdwebProvider>}
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -31,13 +31,14 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
-            {/* El contenido crecerá y ocupará el espacio disponible */}
             <main className="flex-grow">{children}</main>
-            {/* Footer siempre estará al final */}
             <Footer />
             <Toaster />
           </ThemeProvider>
-        </ThirdwebProvider>
+        </ThirdwebProvider>*/}
+        <div className="flex justify-center items-center text-4xl font-bold">
+          Proyecto pausado. Volveremos pronto.
+        </div>
       </body>
     </html>
   );

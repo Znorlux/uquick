@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <ThirdwebProvider>}
+        <ThirdwebProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -38,7 +38,7 @@ export default function RootLayout({
         </ThirdwebProvider>
         {/*<div className="flex justify-center items-center text-4xl font-bold">
           Proyecto pausado. Volveremos pronto.
-        </div>/*}
+        </div>*/}
       </body>
     </html>
   );

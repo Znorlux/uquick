@@ -36,7 +36,7 @@ async function testInsertUser() {
 
     // Verificar que el usuario fue creado correctamente
     assert.ok(dbUser, "❌ Error: El usuario no se insertó en la base de datos.");
-    console.log("✅ Usuario insertado correctamente.");
+    console.log("✅ TEST 1: Usuario insertado correctamente.");
 
     // Verificar que el ID del usuario insertado coincide con el esperado
     assert.strictEqual(
@@ -44,7 +44,7 @@ async function testInsertUser() {
       testUser.id,
       "❌ Error: El ID del usuario no coincide con el esperado."
     );
-    console.log("✅ El ID del usuario coincide con el esperado.");
+    console.log("✅ TEST 2: El ID del usuario coincide con el esperado.");
 
     // Verificar que el email insertado es correcto
     assert.strictEqual(
@@ -52,7 +52,7 @@ async function testInsertUser() {
       testUser.email,
       "❌ Error: El email del usuario no coincide."
     );
-    console.log("✅ El email del usuario coincide.");
+    console.log("✅ TEST 3: El email del usuario coincide.");
 
     // Verificar que el nombre del usuario fue almacenado correctamente
     assert.strictEqual(
@@ -60,14 +60,14 @@ async function testInsertUser() {
       testUser.given_name,
       "❌ Error: El nombre del usuario no coincide."
     );
-    console.log("✅ El nombre del usuario coincide.");
+    console.log("✅ TEST 4: El nombre del usuario coincide.");
 
     // Verificar que el username fue generado correctamente
     assert.ok(
       dbUser.userName.length > 0,
       "❌ Error: No se generó un username válido."
     );
-    console.log("✅ Se generó un username correctamente.");
+    console.log("✅ TEST 5: Se generó un username correctamente.");
 
     console.log("🎉 TODAS LAS PRUEBAS PASARON EXITOSAMENTE.");
 

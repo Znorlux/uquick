@@ -3,11 +3,11 @@ import Image from "next/image";
 import CreditIcon from "../../public/qc-coin.png"; // Icono para los créditos
 import StatusIcon from "../../public/explorer.png"; // Icono para el estatus
 import AchievementIcon from "../../public/holo-red.png"; // Icono para los logros
-import { BellIcon, Contact, BookMarked, Book } from "lucide-react";
+import { BellIcon, Contact, BookMarked } from "lucide-react";
 
 export default function Profile() {
   const userData = {
-    username: "Anónimo", // TODO: Obtener el usuario real
+    username: "Anónimo",
     cyberStatus: "Ciberexplorador",
     quantumCredits: 1250,
     holoAchievements: [

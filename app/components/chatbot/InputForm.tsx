@@ -16,6 +16,19 @@ type Props = {
   stop: () => void;
 };
 
+// Helper function to read file as data URL
+const readFileAsDataURL = (file: File): Promise<string> => {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const result = e.target?.result;
+      resolve(typeof result === "string" ? result : "");
+    };
+    reader.onerror = (error) => reject(error);
+    reader.readAsDataURL(file);
+  });
+};
+
 const InputForm = ({
   handleInputChange,
   handleSubmit,
@@ -29,20 +42,10 @@ const InputForm = ({
     const files = event.target.files;
     if (!files) return;
 
-    const imagePromises = Array.from(files).map((file) => {
-      return new Promise<string>((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const result = e.target?.result;
-          resolve(result ? String(result) : "");
-        };
-        reader.onerror = (error) => reject(error);
-        reader.readAsDataURL(file);
-      });
-    });
-
     try {
-      const base64Strings = await Promise.all(imagePromises);
+      const base64Strings = await Promise.all(
+        Array.from(files).map(readFileAsDataURL)
+      );
       setImages((prev) => [...prev, ...base64Strings]);
     } catch (error) {
       console.error("Error reading image:", error);

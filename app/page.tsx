@@ -57,9 +57,9 @@ async function getData(searchParam: string) {
 
 export default function Home({
   searchParams,
-}: {
-  searchParams: { readonly page: string };
-}) {
+}: Readonly<{
+  searchParams: { page: string };
+}>) {
   return (
     <div className="max-w-[1000px] mx-auto flex gap-x-10 mt-4">
       <div className="w-[65%] flex flex-col gap-y-5">
@@ -107,7 +107,11 @@ export default function Home({
   );
 }
 
-async function ShowItems({ searchParams }: { searchParams: { readonly page: string } }) {
+async function ShowItems({
+  searchParams,
+}: Readonly<{
+  searchParams: { page: string };
+}>) {
   const { count, data } = await getData(searchParams.page);
   return (
     <>

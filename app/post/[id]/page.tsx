@@ -69,7 +69,9 @@ async function getData(id: string) {
   return data;
 }
 
-export default async function PostPage({ params }: { params: {readonly id: string } }) {
+export default async function PostPage({
+  params,
+}: Readonly<{ params: { id: string } }>) {
   const data = await getData(params.id);
 
   return (

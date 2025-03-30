@@ -8,6 +8,7 @@ function Airdrop() {
         width="100%"
         height="750px"
         style={{ maxWidth: "100%" }}
+        title="pendejada"
       ></iframe>
     </div>
   );

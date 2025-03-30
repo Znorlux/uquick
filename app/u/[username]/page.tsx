@@ -6,9 +6,9 @@ import CreditIcon from "../../../public/qc-coin.png"; // Icono para los crédito
 
 export default function PublicProfile({
   params,
-}: {
-  params: { readonly username: string };
-}) {
+}: Readonly<{
+  params: { username: string };
+}>) {
   const userData = {
     username: params.username || "Anónimo",
     cyberStatus: "Ciberexplorador",

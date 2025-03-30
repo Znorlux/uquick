@@ -46,9 +46,9 @@ const rules = [
 
 export default function CreatePostRoute({
   params,
-}: {
-  params: {readonly id: string };
-}) {
+}: Readonly<{
+  params: { id: string };
+}>) {
   const [imageUrl, setImageUrl] = useState<null | string>(null);
   const [json, setJson] = useState<null | JSONContent>(null);
   const [title, setTitle] = useState<null | string>(null);

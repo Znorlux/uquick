@@ -68,10 +68,10 @@ async function getData(name: string, searchParam: string) {
 export default async function SubRedditRoute({
   params,
   searchParams,
-}: {
-  params: { readonly id: string };
-  searchParams: { readonly page: string };
-}) {
+}: Readonly<{
+  params: { id: string };
+  searchParams: { page: string };
+}>) {
   const { data, count } = await getData(params.id, searchParams.page);
   const { getUser } = getKindeServerSession();
   const user = await getUser();

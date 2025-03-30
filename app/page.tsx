@@ -13,7 +13,6 @@ import { SuspenseCard } from "./components/SuspenseCard";
 import Pagination from "./components/Pagination";
 import { unstable_noStore as noStore } from "next/cache";
 import { TrendingCommunities } from "./components/TrendingCommunities"; // Importamos el nuevo componente
-import Footer from "./components/Footer";
 
 async function getData(searchParam: string) {
   noStore();
@@ -59,7 +58,7 @@ async function getData(searchParam: string) {
 export default function Home({
   searchParams,
 }: {
-  searchParams: { page: string };
+  searchParams: { readonly page: string };
 }) {
   return (
     <div className="max-w-[1000px] mx-auto flex gap-x-10 mt-4">
@@ -108,7 +107,7 @@ export default function Home({
   );
 }
 
-async function ShowItems({ searchParams }: { searchParams: { page: string } }) {
+async function ShowItems({ searchParams }: { searchParams: { readonly page: string } }) {
   const { count, data } = await getData(searchParams.page);
   return (
     <>

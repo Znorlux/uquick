@@ -35,7 +35,7 @@ export async function TrendingCommunities() {
               </div>
             </Link>
             <p className=" text-xs text-muted-foreground">
-              {community.description ||
+              {community.description ??
                 "No se ha proporcionado una descripción"}
             </p>
           </li>

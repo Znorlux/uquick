@@ -10,15 +10,7 @@ async function testUpdateSubDescription() {
 
   try {
     // **1. CREAR UN SUBREDDIT DE PRUEBA**
-    const subreddit = await prisma.subreddit.upsert({
-      where: { name: "testSub" },
-      update: {},
-      create: {
-        name: "testSub",
-        description: "Descripción inicial",
-      },
-    });
-
+    
     console.log("✅ Subreddit de prueba creado.");
 
     // **2. SIMULAR ACTUALIZACIÓN DE DESCRIPCIÓN**

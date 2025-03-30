@@ -7,7 +7,7 @@ import { useFormState } from "react-dom";
 import { useEffect } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
-interface iAppProps {
+interface IAppProps {
   subName: string;
   description: string | null | undefined;
 }
@@ -17,7 +17,7 @@ const initalState = {
   status: "",
 };
 
-export function SubDescriptionForm({ description, subName }: iAppProps) {
+export function SubDescriptionForm({ description, subName }: Readonly<IAppProps>) {
   const [state, formAction] = useFormState(updateSubDescription, initalState);
   const { toast } = useToast();
 

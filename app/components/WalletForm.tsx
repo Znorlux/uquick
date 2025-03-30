@@ -1,6 +1,4 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
@@ -19,7 +17,7 @@ const initialState = {
 export default function WalletForm({
   currentWallet,
 }: {
-  currentWallet: string | null;
+  readonly currentWallet: string | null;
 }) {
   const [state, formAction] = useFormState(updateWalletAddress, initialState);
   const { toast } = useToast();

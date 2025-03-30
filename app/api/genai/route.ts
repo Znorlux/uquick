@@ -1,5 +1,5 @@
 import { StreamingTextResponse, GoogleGenerativeAIStream, Message } from "ai";
-import { GoogleGenerativeAI, Content } from "@google/generative-ai";
+import { GoogleGenerativeAI} from "@google/generative-ai";
 // IMPORTANT! Set the runtime to edge
 export const runtime = "edge";
 export async function POST(req: Request, res: Response) {

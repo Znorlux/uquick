@@ -2,7 +2,7 @@
 import { useToast } from "@/components/ui/use-toast";
 import { Share } from "lucide-react";
 
-export function CopyLink({ id }: { id: string }) {
+export function CopyLink({ id }: { readonly id: string }) {
   const { toast } = useToast();
   async function copytoClipboard() {
     await navigator.clipboard.writeText(`${location.origin}/post/${id}`);

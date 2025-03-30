@@ -8,7 +8,6 @@ function Airdrop() {
         width="100%"
         height="750px"
         style={{ maxWidth: "100%" }}
-        frameBorder="0"
       ></iframe>
     </div>
   );

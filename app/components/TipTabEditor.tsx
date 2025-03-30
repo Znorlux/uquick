@@ -71,8 +71,8 @@ export function TipTapEditor({
   setJson,
   json,
 }: {
-  setJson: any;
-  json: JSONContent | null;
+  readonly setJson: any;
+  readonly json: JSONContent | null;
 }) {
   const editor = useEditor({
     extensions: [StarterKit],

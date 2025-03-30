@@ -3,12 +3,11 @@ import Image from "next/image";
 import StatusIcon from "../../../public/explorer.png"; // Icono para el estatus
 import AchievementIcon from "../../../public/holo-red.png"; // Icono para los logros
 import CreditIcon from "../../../public/qc-coin.png"; // Icono para los créditos
-import { Separator } from "@/components/ui/separator";
 
 export default function PublicProfile({
   params,
 }: {
-  params: { username: string };
+  params: { readonly username: string };
 }) {
   const userData = {
     username: params.username || "Anónimo",

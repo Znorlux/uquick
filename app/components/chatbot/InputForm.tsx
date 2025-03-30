@@ -32,7 +32,10 @@ const InputForm = ({
     const imagePromises = Array.from(files).map((file) => {
       return new Promise<string>((resolve, reject) => {
         const reader = new FileReader();
-        reader.onload = (e) => resolve(e.target?.result?.toString() || "");
+        reader.onload = (e) => {
+          const result = e.target?.result;
+          resolve(result ? String(result) : "");
+        };
         reader.onerror = (error) => reject(error);
         reader.readAsDataURL(file);
       });

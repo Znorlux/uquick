@@ -15,7 +15,6 @@ import { UploadDropzone } from "@/app/components/Uploadthing";
 import { useState } from "react";
 import { createPost } from "@/app/actions";
 import { JSONContent } from "@tiptap/react";
-import { title } from "process";
 
 const rules = [
   {
@@ -48,7 +47,7 @@ const rules = [
 export default function CreatePostRoute({
   params,
 }: {
-  params: { id: string };
+  params: {readonly id: string };
 }) {
   const [imageUrl, setImageUrl] = useState<null | string>(null);
   const [json, setJson] = useState<null | JSONContent>(null);

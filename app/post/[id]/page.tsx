@@ -69,7 +69,7 @@ async function getData(id: string) {
   return data;
 }
 
-export default async function PostPage({ params }: { params: { id: string } }) {
+export default async function PostPage({ params }: { params: {readonly id: string } }) {
   const data = await getData(params.id);
 
   return (

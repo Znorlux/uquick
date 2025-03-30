@@ -28,7 +28,7 @@ export function GridPattern({
   duration = 4,
   repeatDelay = 0.5,
   ...props
-}: GridPatternProps) {
+}: Readonly<GridPatternProps>) {
   const id = useId();
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });

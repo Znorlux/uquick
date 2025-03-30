@@ -129,7 +129,6 @@ async function testUpdateUsername() {
       console.error("❌ Error al probar username duplicado:", error);
     }
 
-    console.log("✅ TODAS LAS PRUEBAS PASARON EXITOSAMENTE.");
   } catch (error) {
     console.error("❌ ERROR EN LAS PRUEBAS:", error);
   } finally {

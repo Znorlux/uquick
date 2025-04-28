@@ -116,7 +116,7 @@ describe("Actualizar dirección de wallet del usuario", () => {
       };
     }
 
-    // ✅ Assert (Fluent Assertions)
+    //  Assert 
     expect(existingUser).toBeDefined();
     expect(response).toBeDefined();
     expect(response.status).toBe("error");

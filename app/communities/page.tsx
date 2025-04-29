@@ -1,5 +1,4 @@
 // pages/communities.tsx
-import { Card } from "@/components/ui/card";
 import { getAllCommunities } from "../actions";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,7 +38,7 @@ export default async function CommunitiesPage() {
                   </div>
                 </Link>
                 <p className="text-sm text-muted-foreground">
-                  {community.description || "Sin descripción"}
+                  {community.description ?? "Sin descripción"}
                 </p>
               </div>
             </div>

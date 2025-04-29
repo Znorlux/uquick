@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowDown, ArrowUp, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { CopyLink } from "./CopyLink";
@@ -8,7 +7,7 @@ import { handleVote } from "../actions";
 import { DownVote, UpVote } from "./SubmitButtons";
 import { RenderToJson } from "./RendertoJson";
 
-interface iAppProps {
+interface IAppProps {
   title: string;
   jsonContent: any;
   id: string;
@@ -28,7 +27,7 @@ export function PostCard({
   userName,
   voteCount,
   commentAmount,
-}: iAppProps) {
+}: Readonly<IAppProps>) {
   return (
     <Card className="flex relative overflow-hidden hover:bg-gray-100 transition-all dark:hover:bg-zinc-900">
       <div className="flex flex-col items-center gap-y-2 bg-muted p-">

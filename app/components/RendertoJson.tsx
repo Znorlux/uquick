@@ -22,7 +22,7 @@ const handlers: NodeHandlers = {
   paragraph: paragraph,
 };
 
-export function RenderToJson({ data }: { data: any }) {
+export function RenderToJson({ data }: {readonly data: any }) {
   return (
     <div className="px-2 pt-2 prose dark:prose-invert">
       <TipTapRender handlers={handlers} node={data} />

@@ -10,11 +10,11 @@ import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
-interface iAppProps {
+interface IAppProps {
   userImage: string | null;
 }
 
-export function UserDropdown({ userImage }: iAppProps) {
+export function UserDropdown({ userImage }: Readonly<IAppProps>) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>

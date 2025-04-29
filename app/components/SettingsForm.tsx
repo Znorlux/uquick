@@ -20,7 +20,7 @@ const initialState = {
 export function SettingsForm({
   username,
 }: {
-  username: string | null | undefined;
+  readonly username: string | null | undefined;
 }) {
   const [state, formAction] = useFormState(updateUsername, initialState);
   const { toast } = useToast();

@@ -6,11 +6,11 @@ import { SubmitButton } from "./SubmitButtons";
 import { createComment } from "../actions";
 import { useRef } from "react";
 
-interface iAppPorps {
-  postId: string;
+interface IAppPorps {
+  readonly postId: string;
 }
 
-export function CommentForm({ postId }: iAppPorps) {
+export function CommentForm({ postId }: IAppPorps) {
   const ref = useRef<HTMLFormElement>(null);
   return (
     <form

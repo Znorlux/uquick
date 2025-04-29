@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowUp, Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
-export function SubmitButton({ text }: { text: string }) {
+export function SubmitButton({ text }: {readonly text: string }) {
   const { pending } = useFormStatus();
   return (
     <>

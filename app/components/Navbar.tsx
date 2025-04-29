@@ -1,5 +1,4 @@
 import Link from "next/link";
-import RedditText from "../../public/Uquick-L.png";
 import redditMobile from "../../public/uquick-pet-logo.png";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";

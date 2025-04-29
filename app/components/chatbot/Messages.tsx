@@ -1,6 +1,6 @@
 // Messages.tsx
 import React from "react";
-import { Bot, User2 } from "lucide-react";
+import { User2 } from "lucide-react";
 import { Message } from "ai/react";
 import Markdown from "./Markdown";
 import QuickFoxIcon from "@/public/quickfox-ai.svg";

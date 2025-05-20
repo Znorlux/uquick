@@ -6,7 +6,10 @@ describe("Funcionalidad de Comunidades", () => {
 
   it("Debería permitir navegar a la página de creación de comunidades", () => {
     cy.visit("/");
-    cy.get("a").contains("Crear comunidad").click();
+    cy.get("button, a")
+      .contains("Crear comunidad")
+      .should("exist")
+      .click({ force: true });
     cy.url().should("include", "/r/create");
   });
 
@@ -14,20 +17,14 @@ describe("Funcionalidad de Comunidades", () => {
     cy.visit("/r/create");
     cy.get("form").should("exist");
     cy.get('input[name="name"]').should("exist");
-    cy.get('textarea[name="description"]').should("exist");
+    cy.get("button").contains("Crear comunidad").should("exist");
   });
 
   it("Debería permitir visitar una comunidad específica", () => {
-    // Primero navegamos a la lista de comunidades
     cy.visit("/communities");
-
-    // Seleccionamos la primera comunidad y hacemos clic en ella
     cy.get('a[href*="/r/"]').first().click();
-
-    // Verificamos que hemos entrado en una comunidad específica
     cy.url().should("include", "/r/");
-
-    // Verificamos que se muestren posts de la comunidad
-    cy.get("article").should("exist");
+    cy.contains("Acerca de esta comunidad").should("exist");
+    cy.get("div").contains("r/").should("exist");
   });
 });

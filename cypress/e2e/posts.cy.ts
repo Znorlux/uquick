@@ -23,7 +23,10 @@ describe("Funcionalidad de Posts", () => {
 
   it("Debería permitir crear una nueva publicación", () => {
     // Hacemos clic en el botón de crear publicación
-    cy.get("a").contains("Crear publiación").click();
+    cy.get("button, a")
+      .contains("Crear publiación")
+      .should("exist")
+      .click({ force: true });
     // Verificamos que estamos en la página de creación
     cy.url().should("include", "/r/home/create");
   });

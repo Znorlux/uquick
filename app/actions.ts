@@ -209,10 +209,6 @@ export async function handleVote(formData: FormData) {
         console.log("Result:", result);
       } catch (error) {
         console.error("Error en la transferencia de UNI:", error);
-        return {
-          status: "error",
-          message: "Hubo un problema con la recompensa.",
-        };
       }
     }
   }

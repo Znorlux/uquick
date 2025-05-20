@@ -45,19 +45,19 @@ export function PostCard({
       </div>
 
       <div>
-        <Link href={`/post/${id}`}>
-          <div className="flex items-center gap-x-2 p-2">
-            <Link className="font-semibold text-xs" href={`/r/${subName}`}>
-              r/{subName}
+        <div className="flex items-center gap-x-2 p-2">
+          <Link className="font-semibold text-xs" href={`/r/${subName}`}>
+            r/{subName}
+          </Link>
+          <p className="text-xs text-muted-foreground">
+            Creado por:{" "}
+            <Link className="hover:text-primary" href={`/u/${userName}`}>
+              u/{userName}
             </Link>
-            <p className="text-xs text-muted-foreground">
-              Creado por:{" "}
-              <Link className="hover:text-primary" href={`u/${userName}`}>
-                u/{userName}
-              </Link>
-            </p>
-          </div>
+          </p>
+        </div>
 
+        <Link href={`/post/${id}`} className="block">
           <div className="px-2">
             <h1 className="font-medium mt-1 text-lg">{title}</h1>
           </div>

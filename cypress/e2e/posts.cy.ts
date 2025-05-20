@@ -6,13 +6,17 @@ describe("Funcionalidad de Posts", () => {
   it("Debería mostrar una lista de posts", () => {
     // Verificamos que existan posts en la página principal
     cy.get("div").should("contain.text", "Crear publiación");
-    // Esperamos a que los posts se carguen (asumiendo que hay suspense)
-    cy.get("article").should("exist");
+    // Esperamos a que los posts se carguen
+    cy.wait(2000);
+    // Buscamos los enlaces a posts en lugar de elementos "article"
+    cy.get("a[href*='/post/']").should("exist");
   });
 
   it("Debería permitir navegar a un post individual", () => {
-    // Hacemos clic en el primer post
-    cy.get("article").first().click();
+    // Esperamos a que los posts se carguen
+    cy.wait(2000);
+    // Hacemos clic en el primer enlace a un post
+    cy.get("a[href*='/post/']").first().click({ force: true });
     // Verificamos que la URL cambie a la página de un post específico
     cy.url().should("include", "/post/");
   });

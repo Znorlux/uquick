@@ -1,0 +1,1262 @@
+[
+  {
+    "description": "  Como usuario\n  Quiero poder crear una cuenta e iniciar sesión\n  Para acceder a las funcionalidades de la plataforma",
+    "elements": [
+      {
+        "description": "",
+        "id": "registro-y-autenticación-de-usuario;registro-exitoso-de-un-nuevo-usuario",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Registro exitoso de un nuevo usuario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 695507000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy en la página de registro",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:14"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5017734300,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "ingreso nombre de usuario \"juan\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:21"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "ingreso correo \"juan@mail.com\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "ingreso contraseña \"Secreto123!\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "confirmo la contraseña \"Secreto123!\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:30"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "veo el mensaje \"Registro exitoso\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:37"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "mi cuenta queda creada en el sistema",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:40"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 329994699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "registro-y-autenticación-de-usuario;inicio-de-sesión-con-credenciales-válidas",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Inicio de sesión con credenciales válidas",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 552315899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "que estoy en la página de inicio de sesión",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:17"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5012456099,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "ingreso correo \"juan@mail.com\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "ingreso contraseña \"Secreto123!\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "hago clic en \"Iniciar sesión\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:33"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "soy redirigido al _dashboard_",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "veo un saludo “¡Bienvenido, juan!”",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 186115800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "registro-y-autenticación-de-usuario;inicio-de-sesión-con-credenciales-inválidas",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Inicio de sesión con credenciales inválidas",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 382052400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "que estoy en la página de inicio de sesión",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:17"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5013859400,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "ingreso correo \"juan@mail.com\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "ingreso contraseña \"WrongPass\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "hago clic en \"Iniciar sesión\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:33"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "sigo en la página de login",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:49"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "veo el error \"Correo o contraseña incorrectos\"",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 285782699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "registro-y-autenticación-de-usuario",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Registro y autenticación de usuario",
+    "tags": [],
+    "uri": "test\\e2e\\features\\auth.feature"
+  },
+  {
+    "description": "  Como usuario autenticado\n  Quiero crear una comunidad y luego poder modificar su descripción\n  Para organizar temas de interés",
+    "elements": [
+      {
+        "description": "",
+        "id": "crear-y-editar-una-comunidad;crear-una-comunidad-nueva",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Crear una comunidad nueva",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 381574300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "estoy en la página \"Crear comunidad\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:82"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "ingreso nombre \"Dev Colombia\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:85"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "escribo descripción \"Comunidad de desarrolladores colombianos\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:88"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "hago clic en \"Crear\"",
+            "result": {
+              "status": "ambiguous",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "soy redirigido a la página de la comunidad \"Dev Colombia\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:94"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "veo la descripción \"Comunidad de desarrolladores colombianos\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:97"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 172299499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "crear-y-editar-una-comunidad;editar-la-descripción-de-mi-comunidad",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Editar la descripción de mi comunidad",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 386630699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "que soy el moderador de \"Dev Colombia\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:101"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5019847900,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "estoy en la página de la comunidad",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:105"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "hago clic en \"Editar descripción\"",
+            "result": {
+              "status": "ambiguous",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "cambio la descripción a \"Foro de desarrolladores Full-Stack\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:111"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "guardo los cambios",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:73"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "veo el mensaje \"Descripción actualizada\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:37"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "la descripción muestra \"Foro de desarrolladores Full-Stack\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:114"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 158541299
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "crear-y-editar-una-comunidad",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Crear y editar una comunidad",
+    "tags": [],
+    "uri": "test\\e2e\\features\\community.feature"
+  },
+  {
+    "description": "  Como usuario autenticado\n  Quiero crear publicaciones en mis comunidades y votar en las de otros\n  Para compartir contenido y participar",
+    "elements": [
+      {
+        "description": "",
+        "id": "crear-posts-y-votar-en-el-foro;crear-un-post-en-una-comunidad",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Crear un post en una comunidad",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 356271000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy en la página de la comunidad \"Dev Colombia\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:120"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5016284599,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "hago clic en \"Nuevo post\"",
+            "result": {
+              "status": "ambiguous",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "ingreso título \"Cómo usar Next.js\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:127"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "escribo contenido \"Algunas buenas prácticas...\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:130"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "publico el post",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:133"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "veo el post con título \"Cómo usar Next.js\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:136"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "el contenido aparece debajo",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:139"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 182409800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "crear-posts-y-votar-en-el-foro;votar-positivamente-en-un-post",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Votar positivamente en un post",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 394660899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "que veo un post titulado \"Cómo usar Next.js\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:142"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5076378900,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "hago clic en el botón \"Me gusta\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:145"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "el contador de votos sube en 1",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:148"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 186077500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "crear-posts-y-votar-en-el-foro",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Crear posts y votar en el foro",
+    "tags": [],
+    "uri": "test\\e2e\\features\\posts.feature"
+  },
+  {
+    "description": "  Como usuario autenticado\n  Quiero poder editar mi nombre de perfil\n  Para mostrar mi identidad como yo prefiera",
+    "elements": [
+      {
+        "description": "",
+        "id": "gestión-de-perfil-de-usuario;editar-nombre-de-perfil-exitosamente",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Editar nombre de perfil exitosamente",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 376819100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado como \"juan\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:55"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5014028500,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "estoy en la sección \"Mi perfil\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:63"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "hago clic en \"Editar nombre\"",
+            "result": {
+              "status": "ambiguous",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "cambio el nombre a \"JuanTobon\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:70"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "guardo los cambios",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:73"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "veo el mensaje \"Perfil actualizado\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:37"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "el nombre de perfil muestra \"JuanTobon\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:76"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 957735499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "gestión-de-perfil-de-usuario",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Gestión de perfil de usuario",
+    "tags": [],
+    "uri": "test\\e2e\\features\\profile.feature"
+  },
+  {
+    "description": "  Como usuario\n  Quiero que la app funcione igual en móvil y en escritorio\n  Para usarla desde donde quiera",
+    "elements": [
+      {
+        "description": "",
+        "id": "acceso-en-diferentes-dispositivos;vista-responsive-en-móvil",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Vista responsive en móvil",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 405523900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que abro la app en un dispositivo móvil",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:188"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5013519800,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "navego al _dashboard_",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "todos los menús y botones se adaptan a la pantalla pequeña",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:199"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "no hay barras de desplazamiento horizontales",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:204"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 220298600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "acceso-en-diferentes-dispositivos;vista-completa-en-escritorio",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Vista completa en escritorio",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 404211500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "que abro la app en un ordenador",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:192"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3955694600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "navego al _dashboard_",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "el menú lateral está siempre visible",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:209"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "el contenido ocupa todo el ancho disponible",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:212"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 191135600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "acceso-en-diferentes-dispositivos",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Acceso en diferentes dispositivos",
+    "tags": [],
+    "uri": "test\\e2e\\features\\responsive.feature"
+  },
+  {
+    "description": "  Como usuario activo\n  Quiero linkear mi wallet y recibir recompensas por mi participación\n  Para gestionarlas en mi cuenta",
+    "elements": [
+      {
+        "description": "",
+        "id": "inscripción-de-wallet-y-recompensas;inscribir-wallet-exitosamente",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Inscribir wallet exitosamente",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 369202999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que estoy autenticado",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "voy a \"Configuración > Wallet\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:154"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "ingreso dirección de wallet \"0xABC123...\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:158"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "confirmo la inscripción",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:161"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "veo \"Wallet conectada: 0xABC123...\"",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "la opción de ver saldo de recompensas",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:167"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 211319700
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "inscripción-de-wallet-y-recompensas;recompensar-participación-tras-votar",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Recompensar participación tras votar",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 389370999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "que he votado en un post",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:170"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5003759400,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\tobon\\projects\\uquick\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:573:17)\n    at processTimers (node:internal/timers:514:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "mi wallet está inscrita",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:173"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "finaliza el proceso de validación",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:176"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "recibo notificación \"Has ganado 5 puntos\"",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:179"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "mi saldo de recompensas aumenta en 5",
+            "match": {
+              "location": "test\\e2e\\step_definitions\\step.ts:182"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 151865200
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "inscripción-de-wallet-y-recompensas",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Inscripción de wallet y recompensas",
+    "tags": [],
+    "uri": "test\\e2e\\features\\rewards.feature"
+  }
+]
